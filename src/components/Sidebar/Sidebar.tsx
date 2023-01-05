@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import IconButton from '../IconButton/IconButton';
 import ListItem from '../ListItem/ListItem';
 import Stack from '../Stack/Stack';
-import Typography from '../Typography/Typography';
+import '../../scss/styles.scss'
 
 interface SideBarPorps {
 

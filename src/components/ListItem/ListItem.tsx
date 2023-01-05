@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import IconButton from '../IconButton/IconButton';
 import Typography from '../Typography/Typography';
+import '../../scss/styles.scss'
 
 interface ListItemPorps extends React.HTMLAttributes<HTMLDivElement> {
 
