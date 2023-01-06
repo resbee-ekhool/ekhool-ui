@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
-import '../../scss/styles.scss'
 
 interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
 
     children: any,
-    shadow?: number,
+    shadow?: number | string,
     p?: number,
     padding?: number,
     gap?: number,
@@ -17,13 +16,18 @@ interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
     height?: number,
     bgColor?: any,
     mh?: number | string,
+    borderEnd?: number | string,
+    ml?: number | string,
+    position?: 'absolute' | 'relative' | undefined,
+    mt?: number | string,
+    br?: number
 
 }
 
-const Stack:FC<StackProps> = ({ children, shadow, p, padding, gap, allCenter, w, width, cursor, direction = 'column', h, height, bgColor, mh, ...props }) => {
+const Stack:FC<StackProps> = ({ children, shadow, p, padding, gap, allCenter, w, width, cursor, direction = 'column', h, height, bgColor, mh, borderEnd, ml, position, mt, br, ...props }) => {
     return (
         <div 
-            className={`stack col gap-${gap} w-${w || width} shadow-${shadow} p-${padding || p} ${allCenter ? 'all-center' : ''} ${cursor} ${direction} h-${h || height} ${bgColor} mh-${mh}`}
+            className={`stack col ${gap ? `gap-${gap}` : ''} ${w || width ? `w-${w || width}` : ''} ${shadow ? `shadow-${shadow}` : ''} ${p || padding ? `p-${padding || p}` : ''} ${allCenter ? 'all-center' : ''} ${cursor ? cursor : ''} ${direction ? direction : ''} ${h || height ? `h-${h || height}` : ''} ${bgColor ? bgColor : ''} ${mh ? `mh-${mh}` : ''} ${shadow ? shadow : ''} ${borderEnd ? `border-end-${borderEnd}` : ''} ${ml ? `ml-${ml}` : ''} ${position ? position : ''} ${mt ? `mt-${mt}` : ''} ${br ? `br-${br}` : ''}`}
             {...props}
         >
             {children}
