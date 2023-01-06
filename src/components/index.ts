@@ -4,3 +4,7 @@ export { default as ListItem } from "./ListItem";
 export { default as Sidebar } from "./Sidebar";
 export { default as Stack } from "./Stack";
 export { default as Typography } from "./Typography";
+export { default as Avatar } from "./Avatar";
+export { default as Menu } from "./Menu";
+export { default as MenuItem } from "./MenuItem";
+export { default as Header } from "./Header";
