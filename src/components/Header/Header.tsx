@@ -77,6 +77,7 @@ const Header:FC<HeaderProps> = ({
                             </div>
                         }
                         align={'right'}
+                        id={'account-menu'}
                     >
 
                         <div className='w-5 h-100'>
