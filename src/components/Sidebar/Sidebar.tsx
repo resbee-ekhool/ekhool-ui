@@ -87,7 +87,7 @@ class Sidebar extends React.Component<SideBarPorps> {
                 }}
                 className='sidebar'
             >
-                <Stack p={2} gap={2} w={1} bgColor={'bg-white'} borderEnd={1} mh={100} >
+                <Stack p={2} gap={2} bgColor={'bg-white'} borderEnd={1} mh={100} >
 
                     {
                         data?.map((item: any, index: number) => {
