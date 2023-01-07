@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import Button from '../Button/Button';
+import Collapse from '../Collapse/Collapse';
 import IconButton from '../IconButton/IconButton';
 import ListItem from '../ListItem/ListItem';
 import Menu from '../Menu/Menu';
@@ -136,7 +137,7 @@ class Sidebar extends React.Component<SideBarPorps> {
 
                 {
                     sidebarOpen &&
-                    <Stack mh={100} >
+                    <Stack mh={100} className={'sidebar-data'} >
 
                         <Stack w={100} p={3} borderEnd={1} height={100} shadow={hovered ? 'side-bar-shadow' : ''} br={hovered ? 2 : 0} >
 
@@ -147,11 +148,30 @@ class Sidebar extends React.Component<SideBarPorps> {
                                 {
                                     dataToMap?.map((item: any, index: number) => {
 
-                                        const { icon, title, active, component } = item
+                                        const { icon, title, active, component, children } = item
 
                                         if(component)
                                         {
                                             return <>{component}</>
+                                        }
+
+                                        if(Array.isArray(children))
+                                        {
+                                            return (
+                                                <Collapse
+                                                    component={
+                                                        <ListItem active={active} title={title} icon={icon} onClick={() => { this._onChangeChild(item) }} endIcon={'expand_more'} />
+                                                    }
+                                                >
+                                                    {
+                                                        children?.map((i, ind) => {
+                                                            return (
+                                                                <ListItem active={i.active} title={i.title} icon={i.icon} onClick={() => { this._onChangeChild(i) }} />
+                                                            )
+                                                        })
+                                                    }
+                                                </Collapse>
+                                            )
                                         }
 
                                         return (
