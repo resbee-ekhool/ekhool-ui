@@ -3,6 +3,7 @@ import Avatar from '../Avatar/Avatar';
 import IconButton from '../IconButton/IconButton';
 import Menu from '../Menu/Menu';
 import Typography from '../Typography/Typography';
+import '../../scss/styles.scss'
 
 interface HeaderProps {
 

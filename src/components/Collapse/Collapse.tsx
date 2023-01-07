@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Button from '../Button/Button';
+import '../../scss/styles.scss'
 
 interface CollapsePorps extends React.HTMLAttributes<HTMLDivElement> {
 

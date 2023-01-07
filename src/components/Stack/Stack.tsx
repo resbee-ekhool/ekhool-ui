@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-
+import '../../scss/styles.scss'
 interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
 
     children: any,

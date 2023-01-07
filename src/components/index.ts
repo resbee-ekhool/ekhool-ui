@@ -8,3 +8,4 @@ export { default as Avatar } from "./Avatar";
 export { default as Menu } from "./Menu";
 export { default as MenuItem } from "./MenuItem";
 export { default as Header } from "./Header";
+export { default as Collapse } from "./Collapse";

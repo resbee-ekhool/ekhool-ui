@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import Stack from '../Stack/Stack';
 import Typography from '../Typography/Typography';
+import '../../scss/styles.scss'
 
 interface IconButtonPorps extends React.HTMLAttributes<HTMLDivElement>{
 

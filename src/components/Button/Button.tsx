@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Typography from '../Typography/Typography';
+import '../../scss/styles.scss'
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 

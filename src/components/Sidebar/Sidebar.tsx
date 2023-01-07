@@ -7,6 +7,7 @@ import Menu from '../Menu/Menu';
 import MenuItem from '../MenuItem/MenuItem';
 import Stack from '../Stack/Stack';
 import Typography from '../Typography/Typography';
+import '../../scss/styles.scss'
 
 type SideBarPorps = {
 

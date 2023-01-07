@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import '../../scss/styles.scss'
 
 interface AvatarPorps extends React.HTMLAttributes<HTMLDivElement> {
 

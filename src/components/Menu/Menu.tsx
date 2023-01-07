@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Button from '../Button/Button';
+import '../../scss/styles.scss'
 
 interface MenuProps extends React.HTMLAttributes<HTMLDivElement> {
 
