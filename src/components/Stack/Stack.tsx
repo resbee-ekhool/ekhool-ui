@@ -24,10 +24,10 @@ interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
 
 }
 
-const Stack:FC<StackProps> = ({ children, shadow, p, padding, gap, allCenter, w, width, cursor, direction = 'column', h, height, bgColor, mh, borderEnd, ml, position, mt, br, ...props }) => {
+const Stack:FC<StackProps> = ({ children, shadow, p, padding, gap, allCenter, w, width, cursor, direction = 'column', h, height, bgColor, mh, borderEnd, ml, position, mt, br, className = "", ...props }) => {
     return (
         <div 
-            className={`stack col ${gap ? `gap-${gap}` : ''} ${w || width ? `w-${w || width}` : ''} ${shadow ? `shadow-${shadow}` : ''} ${p || padding ? `p-${padding || p}` : ''} ${allCenter ? 'all-center' : ''} ${cursor ? cursor : ''} ${direction ? direction : ''} ${h || height ? `h-${h || height}` : ''} ${bgColor ? bgColor : ''} ${mh ? `mh-${mh}` : ''} ${shadow ? shadow : ''} ${borderEnd ? `border-end-${borderEnd}` : ''} ${ml ? `ml-${ml}` : ''} ${position ? position : ''} ${mt ? `mt-${mt}` : ''} ${br ? `br-${br}` : ''}`}
+            className={`stack col ${gap ? `gap-${gap}` : ''} ${w || width ? `w-${w || width}` : ''} ${shadow ? `shadow-${shadow}` : ''} ${p || padding ? `p-${padding || p}` : ''} ${className} ${allCenter ? 'all-center' : ''} ${cursor ? cursor : ''} ${direction ? direction : ''} ${h || height ? `h-${h || height}` : ''} ${bgColor ? bgColor : ''} ${mh ? `mh-${mh}` : ''} ${shadow ? shadow : ''} ${borderEnd ? `border-end-${borderEnd}` : ''} ${ml ? `ml-${ml}` : ''} ${position ? position : ''} ${mt ? `mt-${mt}` : ''} ${br ? `br-${br}` : ''}`}
             {...props}
         >
             {children}

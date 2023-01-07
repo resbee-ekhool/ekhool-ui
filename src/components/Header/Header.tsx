@@ -14,7 +14,9 @@ interface HeaderProps {
 
     user: { avatar: string, name: string, accountUrl: string },
 
-    data?: any
+    data?: any,
+
+    position?: 'fixed' | 'relative' | 'absolute' | 'sticky' | 'inherit' | null | undefined
 
 }
 
@@ -23,13 +25,14 @@ const Header:FC<HeaderProps> = ({
         onClickMenu = () => {}, 
         onLogoClick = () => {},
         user,
-        data
+        data,
+        position = 'fixed'
 }) => {
 
     return (
-        <div className='header' >
+        <div className={`header ${position} w-100`} >
 
-            <div className='row gap-6' >
+            <div className='row gap-6 ml-3' >
                 <IconButton icon={'menu'} onClick={onClickMenu} />
                 
                 {
@@ -38,7 +41,7 @@ const Header:FC<HeaderProps> = ({
 
             </div>
 
-            <div className='row gap-4' >
+            <div className='row gap-4 mr-3' >
 
                 {
                     Array.isArray(data) && data?.map((item, index) => {

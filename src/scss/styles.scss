@@ -20,6 +20,12 @@ $gray700: #454F5B;
 $gray800: #212B36;
 $gray900: #161C24;
 
+.sidebar-container {
+    min-width: 50px !important;
+    max-width: 50px !important;
+    width: 100%;
+}
+
 .px-1 {
     padding-left: 5px !important;
     padding-right: 5px !important;
@@ -150,15 +156,14 @@ $gray900: #161C24;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-left: 25px;
-    padding-right: 25px;
+    left: 0px;
 }
 
 .fill {
     height: 100%;
     width: 100%;
     position: absolute;
-    z-index: 100;
+    z-index: 99999999;
     background-color: transparent;
 }
 
@@ -189,7 +194,6 @@ iframe {
 .menu {
   position: relative;
   display: inline-block;
-  float: right !important;
 }
   
 .menu-content {
@@ -210,7 +214,13 @@ iframe {
     display: flex;
     flex-direction: row;
     min-height: calc(100vh - 60px);
-    max-width: 260px;
+    max-width: 325px;
+}
+
+.side-bar-shadow {
+    // box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    // box-shadow: rgb(145 158 171 / 24%) 0px 0px 2px 0px, rgb(145 158 171 / 24%) 25px 20px 40px -4px;
+    box-shadow: 0 2px 4px 2px rgb(0 0 0 / 20%);
 }
 
 .list-item {
@@ -239,6 +249,18 @@ iframe {
 
 .absolute {
     position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.inherit {
+    position: inherit;
 }
 
 .ml-1 {
@@ -279,6 +301,46 @@ iframe {
 
 .ml-10 {
     margin-left: 5rem;
+}
+
+.mr-1 {
+    margin-right: 0.5rem;
+}
+
+.mr-2 {
+    margin-right: 1rem;
+}
+
+.mr-3 {
+    margin-right: 1.25rem;
+}
+
+.mr-4 {
+    margin-right: 1.5rem;
+}
+
+.mr-5 {
+    margin-right: 1.75rem;
+}
+
+.mr-6 {
+    margin-right: 2rem;
+}
+
+.mr-7 {
+    margin-right: 2.5rem;
+}
+
+.mr-8 {
+    margin-right: 3rem;
+}
+
+.mr-9 {
+    margin-right: 3.5rem;
+}
+
+.mr-10 {
+    margin-right: 5rem;
 }
 
 .mt-1 {
@@ -1037,11 +1099,6 @@ h6 {
 }
 .shadow-10 {
     box-shadow: rgb(145 158 171 / 24%) -40px 40px 80px -8px;
-}
-
-.side-bar-shadow {
-    box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.1);
-    // box-shadow: rgb(145 158 171 / 24%) 0px 0px 2px 0px, rgb(145 158 171 / 24%) 25px 20px 40px -4px;
 }
 
 .p-1 {

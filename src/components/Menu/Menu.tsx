@@ -18,7 +18,7 @@ const Menu:FC<MenuProps> = ({ children, component, className, align = 'left', id
     function openMenu() {
         if(typeof document == 'object')
         {
-            document?.getElementById("ekhoolDropDown").classList.toggle("show");
+            document?.getElementById(id).classList.toggle("show");
         }
     }
       
@@ -26,10 +26,14 @@ const Menu:FC<MenuProps> = ({ children, component, className, align = 'left', id
     {
         window.onclick = function(event) {
             if (!(event.target as HTMLInputElement)?.matches('.ek-drop-down')) {
-                var dropdowns = document.getElementById(id || 'ekhoolDropDown');
-                var openDropdown = dropdowns
-                if (openDropdown.classList.contains('show')) {
+                var dropdowns = document.getElementsByClassName("menu-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                
+                  if (openDropdown.classList.contains('show')) {
                     openDropdown.classList.remove('show');
+                  }
                 }
             }
         }
@@ -48,7 +52,7 @@ const Menu:FC<MenuProps> = ({ children, component, className, align = 'left', id
                 }
             </div>
 
-            <div id={id || 'ekhoolDropDown'} className="menu-content shadow-9 br-2" style={{ left: align === 'left' ? 0 : undefined, right: align === 'right' ? 0 : undefined }} >
+            <div id={id} className={`menu-content shadow-9 br-2 ${id}`} style={{ left: align === 'left' ? 0 : undefined, right: align === 'right' ? 0 : undefined }} >
                 {children}
             </div>
         </div>
