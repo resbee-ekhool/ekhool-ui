@@ -20,7 +20,8 @@ interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
     ml?: number | string,
     position?: 'absolute' | 'relative' | undefined,
     mt?: number | string,
-    br?: number
+    br?: number,
+    style?: any
 
 }
 
@@ -29,6 +30,10 @@ const Stack:FC<StackProps> = ({ children, shadow, p, padding, gap, allCenter, w,
         <div 
             className={`stack col ${gap ? `gap-${gap}` : ''} ${w || width ? `w-${w || width}` : ''} ${shadow ? `shadow-${shadow}` : ''} ${p || padding ? `p-${padding || p}` : ''} ${className} ${allCenter ? 'all-center' : ''} ${cursor ? cursor : ''} ${direction ? direction : ''} ${h || height ? `h-${h || height}` : ''} ${bgColor ? bgColor : ''} ${mh ? `mh-${mh}` : ''} ${shadow ? shadow : ''} ${borderEnd ? `border-end-${borderEnd}` : ''} ${ml ? `ml-${ml}` : ''} ${position ? position : ''} ${mt ? `mt-${mt}` : ''} ${br ? `br-${br}` : ''}`}
             {...props}
+            style={{
+                ...props.style,
+                backgroundColor: bgColor
+            }}
         >
             {children}
         </div>

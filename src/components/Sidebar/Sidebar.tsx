@@ -8,11 +8,10 @@ import MenuItem from '../MenuItem/MenuItem';
 import Stack from '../Stack/Stack';
 import Typography from '../Typography/Typography';
 import '../../scss/styles.scss'
-
-type SideBarPorps = {
+interface SideBarPorps extends React.HTMLAttributes<HTMLDivElement> {
 
     data: any,
-    onChange: Function,
+    onChange: any,
     accountUrl?: string,
     expanded?: boolean,
     position?: 'fixed' | 'relative' | 'absolute' | 'sticky' | 'inherit' | null | undefined
@@ -56,6 +55,18 @@ class Sidebar extends React.Component<SideBarPorps> {
 
     }
 
+    componentDidUpdate(prevProps: Readonly<SideBarPorps>, prevState: Readonly<{}>, snapshot?: any): void {
+        if(!this.state.hovered)
+        {
+            if(this.props.expanded != this.state.sidebarOpen)
+            {
+                this.setState({
+                    sidebarOpen: this.props.expanded
+                })
+            }
+        }
+    }
+
     render(): React.ReactNode {
 
         let { hovered, hoveredMenu, hoveredIndex, sidebarOpen } = this.state;
@@ -93,8 +104,9 @@ class Sidebar extends React.Component<SideBarPorps> {
                     }
                 }}
                 className={`sidebar ${position}`}
+                {...this.props}
             >
-                <Stack p={2} gap={2} bgColor={'bg-white'} borderEnd={1} mh={100} className={'sidebar-container'} >
+                <Stack p={2} gap={2} borderEnd={1} mh={100} className={'sidebar-container'} >
 
                     {
                         data?.map((item: any, index: number) => {
@@ -140,7 +152,7 @@ class Sidebar extends React.Component<SideBarPorps> {
                     sidebarOpen &&
                     <Stack mh={100} className={'sidebar-data'} >
 
-                        <Stack w={100} p={3} borderEnd={1} height={100} shadow={hovered ? 'side-bar-shadow' : ''} br={hovered ? 2 : 0} >
+                        <Stack w={100} p={3} borderEnd={1} height={100} shadow={hovered ? 'side-bar-shadow' : ''} br={hovered ? 2 : 0} bgColor={this.props.style.backgroundColor} >
 
                             <Typography variant={'subtitle1'} >{title}</Typography>
 
